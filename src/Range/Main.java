@@ -32,10 +32,12 @@ public class Main {
 			testRange.print();
 			testRange.addRange(1000,1500);
 			testRange.print();
+			testRange.addRange(1600,1550);
+			testRange.print();
 		}
 		System.out.println("Testing Delete");
 		{
-			testRange.deleteRange(50,100);
+			testRange.deleteRange(100,50);
 			testRange.print();
 			testRange.deleteRange(75,150);
 			testRange.print();
@@ -48,6 +50,7 @@ public class Main {
 		System.out.println("Testing Query");
 		{
 			System.out.println(testRange.queryRange(2,40) ? "Pass" : "Fail");
+			System.out.println(testRange.queryRange(40,2) ? "Pass" : "Fail");
 			System.out.println(!testRange.queryRange(2,80) ? "Pass" : "Fail");
 			System.out.println(testRange.queryRange(150,400) ? "Pass" : "Fail");
 			System.out.println(!testRange.queryRange(150,1500) ? "Pass" : "Fail");

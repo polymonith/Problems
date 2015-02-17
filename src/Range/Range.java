@@ -15,9 +15,30 @@ public abstract class Range {
 	abstract protected boolean queryRange(Integer start, Integer end);
 	abstract protected void deleteRange(Integer start, Integer end);
 	
-	public void addRange(int start, int end) {addRange(new Integer(start), new Integer(end));}
-	public boolean queryRange(int start, int end) {return queryRange(new Integer(start), new Integer(end));}
-	public void deleteRange(int start, int end) {deleteRange(new Integer(start), new Integer(end));}
+	public void addRange(int start, int end) {
+		if(start > end) {
+			int temp = start;
+			start = end;
+			end = temp;
+		}
+		addRange(new Integer(start), new Integer(end));
+	}
+	public boolean queryRange(int start, int end) {
+		if(start > end) {
+			int temp = start;
+			start = end;
+			end = temp;
+		}
+		return queryRange(new Integer(start), new Integer(end));
+	}
+	public void deleteRange(int start, int end) {
+		if(start > end) {
+			int temp = start;
+			start = end;
+			end = temp;
+		}
+		deleteRange(new Integer(start), new Integer(end));
+	}
 	
 	public void print() {
 		Iterator iPrint = bounds.iterator();
