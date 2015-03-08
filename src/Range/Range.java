@@ -15,6 +15,7 @@ public abstract class Range {
 	abstract protected boolean queryRange(Integer start, Integer end);
 	abstract protected void deleteRange(Integer start, Integer end);
 	
+	
 	public void addRange(int start, int end) {
 		if(start > end) {
 			int temp = start;
@@ -23,6 +24,7 @@ public abstract class Range {
 		}
 		addRange(new Integer(start), new Integer(end));
 	}
+	
 	public boolean queryRange(int start, int end) {
 		if(start > end) {
 			int temp = start;
@@ -31,6 +33,7 @@ public abstract class Range {
 		}
 		return queryRange(new Integer(start), new Integer(end));
 	}
+	
 	public void deleteRange(int start, int end) {
 		if(start > end) {
 			int temp = start;
